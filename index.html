@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function computerPlay(){
+            let computerChoice = "";
+            switch (Math.floor(Math.random()*3)) {
+                case 0:
+                    computerChoice = "rock";
+                    break;
+                case 1:
+                    computerChoice = "paper";
+                    break;
+                case 2: 
+                    computerChoice = "scissor";
+                    break;
+                /* default:
+                    break; */
+            }               
+            return computerChoice;
+        }
+
+        /* let choice = Math.floor(Math.random()*3)
+        computerPlay(choice); */ 
+
+        /* function playRound(playerSelection,computerSelection ){
+            let message = ''
+            if ( playerSelection == computerSelection) {
+                message = 'Its as draw'
+            } 
+            else if (playerSelection == "rock" && computerSelection == "paper") {
+                message = 'You Lose! Paper beats Rock'
+            } 
+            else if(playerSelection == "rock" && computerSelection == "scissor") {
+                message = 'You WIN! Rock beats Scissor'
+            }
+            else if(playerSelection == "paper" && computerSelection == "rock") {
+                message = 'You WIN! Paper beats Rock'
+            }
+            else if(playerSelection == "paper" && computerSelection == "scissor") {
+                message = 'You Lose! Scissor beats Paper'
+            }
+            else if(playerSelection == "scissor" && computerSelection == "rock") {
+                message = 'You Lose! Rock beats Scissor'
+            }
+            else if(playerSelection == "scissor" && computerSelection == "paper") {
+                message = 'You WIN! Scissor beats Paper'
+            }
+            return message
+        }
+ */
+
+        /* const playerSelection = "scissor";
+        const computerSelection = computerPlay(choice);        
+        console.log(playRound(playerSelection,computerSelection)); */
+
+        function playRound(playerSelection,computerSelection ){
+            let message = ''
+            if ( playerSelection == computerSelection) {
+                message = 'Its as draw'
+            } 
+            else if (playerSelection == "rock" && computerSelection == "paper") {
+                message = 'You Lose!'
+            } 
+            else if(playerSelection == "rock" && computerSelection == "scissor") {
+                message = 'You WIN!'
+            }
+            else if(playerSelection == "paper" && computerSelection == "rock") {
+                message = 'You WIN!'
+            }
+            else if(playerSelection == "paper" && computerSelection == "scissor") {
+                message = 'You Lose!'
+            }
+            else if(playerSelection == "scissor" && computerSelection == "rock") {
+                message = 'You Lose!'
+            }
+            else if(playerSelection == "scissor" && computerSelection == "paper") {
+                message = 'You WIN!'
+            }
+            return message
+        }
+        
+        function game() {
+            let playerScore = 0;
+            let computerScore = 0;
+            let results = "";
+            for (let i = 0; i < 5; i++) {
+                let playerSelection = prompt(" rock, paper or scissors?").toLocaleLowerCase();
+                const computerSelection = computerPlay();
+                console.log(computerPlay())
+                if (playRound(playerSelection,computerSelection) === 'You WIN!') {
+                    playerScore++
+                }else{
+                    computerScore++
+                }
+                /* console.log() */
+            }
+            console.log("Player Score: "+playerScore);
+            console.log("Computer Score: "+computerScore)
+
+            if (playerScore>computerScore) {
+                results = "YOU WIN!!!"
+            }else {
+                results = "You Lose"
+            }
+            return results
+        }
+
+        console.log(game())
+    </script>
+</body>
+</html>
